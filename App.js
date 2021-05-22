@@ -19,6 +19,9 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 // #FFCD4A
 
+const ICON_COLOR = '#FFCD4A';
+const THEME_COLOR = '#242424';
+
 // Call: FontAwesome5, taxi
 // Reservation: MaterialCommunityIcons, calendar-clock
 // My Taxido: FontAwesome, black-tie
@@ -113,7 +116,20 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        tabBarOptions={{
+          activeTintColor: ICON_COLOR,
+          inactiveTintColor: THEME_COLOR,
+          labelPosition: 'below-icon',
+          style: {
+            height: Platform.OS == 'android' ? 70 : 70,
+            paddingBottom: Platform.OS == 'android' ? 15 : 20,
+            paddingTop: Platform.OS == 'android' ? 8 : 6,
+          },
+          labelStyle: {
+            fontSize: Platform.OS == 'android' ? 12 : 10,
+          },
+        }}>
         <Tab.Screen
           name="Reservation"
           component={ReservationScreenStack}
