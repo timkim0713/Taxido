@@ -7,7 +7,10 @@ import {
   Text,
   View,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import FA5Icon from 'react-native-vector-icons/FontAwesome5';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import FAIcon from 'react-native-vector-icons/FontAwesome';
+import AntIcon from 'react-native-vector-icons/AntDesign';
 
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -15,6 +18,11 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 // #FFCD4A
+
+// Call: FontAwesome5, taxi
+// Reservation: MaterialCommunityIcons, calendar-clock
+// My Taxido: FontAwesome, black-tie
+// Profile: AntDesign, profile
 
 //RESERVATION------------------------------------------------------------------------------------------------
 
@@ -112,7 +120,7 @@ export default function App() {
           options={{
             tabBarLabel: 'Reservation',
             tabBarIcon: ({color, size}) => (
-              <Icon name="ios-search-outline" color={color} size={24} />
+              <MaterialIcon name="calendar-clock" color={color} size={24} />
             ),
           }}
         />
@@ -122,7 +130,7 @@ export default function App() {
           options={{
             tabBarLabel: 'Call',
             tabBarIcon: ({color, size}) => (
-              <Icon name="ios-search-outline" color={color} size={24} />
+              <FA5Icon name="taxi" color={color} size={24} />
             ),
           }}
         />
@@ -132,7 +140,7 @@ export default function App() {
           options={{
             tabBarLabel: 'My Taxido',
             tabBarIcon: ({color, size}) => (
-              <Icon name="ios-search-outline" color={color} size={24} />
+              <FAIcon name="black-tie" color={color} size={24} />
             ),
           }}
         />
@@ -142,7 +150,7 @@ export default function App() {
           options={{
             tabBarLabel: 'Profile',
             tabBarIcon: ({color, size}) => (
-              <Icon name="ios-search-outline" color={color} size={24} />
+              <AntIcon name="profile" color={color} size={24} />
             ),
           }}
         />
