@@ -17,99 +17,18 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-// #FFCD4A
+import CallScreenStack from './application/BottomTabScreens/Call/CallScreenStack';
+import MyTaxidoScreenStack from './application/BottomTabScreens/MyTaxido/MyTaxidoScreenStack';
+import ReserveScreenStack from './application/BottomTabScreens/Reserve/ReserveScreenStack';
+import ProfileScreenStack from './application/BottomTabScreens/Profile/ProfileScreenStack';
 
 const ICON_COLOR = '#FFCD4A';
 const THEME_COLOR = '#242424';
 
 // Call: FontAwesome5, taxi
-// Reservation: MaterialCommunityIcons, calendar-clock
+// Reserve: MaterialCommunityIcons, calendar-clock
 // My Taxido: FontAwesome, black-tie
 // Profile: AntDesign, profile
-
-//RESERVATION------------------------------------------------------------------------------------------------
-
-function ReservationScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>ReservationScreen!</Text>
-    </View>
-  );
-}
-
-function ReservationScreenStack() {
-  const Stack = createStackNavigator();
-  return (
-    <Stack.Navigator screenOptions="Reservation">
-      <Stack.Screen name="ReservationScreen" component={ReservationScreen} />
-    </Stack.Navigator>
-  );
-}
-
-//RESERVATION------------------------------------------------------------------------------------------------
-
-//CALL------------------------------------------------------------------------------------------------
-
-function CallScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>CallScreen!</Text>
-    </View>
-  );
-}
-
-function CallScreenStack() {
-  const Stack = createStackNavigator();
-  return (
-    <Stack.Navigator screenOptions="Call">
-      <Stack.Screen name="CallScreen" component={CallScreen} />
-    </Stack.Navigator>
-  );
-}
-//CALL------------------------------------------------------------------------------------------------
-
-//MyTaxido------------------------------------------------------------------------------------------------
-
-function MyTaxidoScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>MyTaxidoScreen!</Text>
-    </View>
-  );
-}
-
-function MyTaxidoScreenStack() {
-  const Stack = createStackNavigator();
-  return (
-    <Stack.Navigator screenOptions="My Taxido">
-      <Stack.Screen name="MyTaxidoScreen" component={MyTaxidoScreen} />
-    </Stack.Navigator>
-  );
-}
-//MyTaxido------------------------------------------------------------------------------------------------
-
-//MyTaxido------------------------------------------------------------------------------------------------
-
-function ProfileScreen() {
-  const Stack = createStackNavigator();
-
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>ProfileScreen!</Text>
-    </View>
-  );
-}
-
-function ProfileScreenStack() {
-  const Stack = createStackNavigator();
-  return (
-    <Stack.Navigator screenOptions="Profile">
-      <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
-    </Stack.Navigator>
-  );
-}
-
-//MyTaxido------------------------------------------------------------------------------------------------
 
 const Tab = createBottomTabNavigator();
 
@@ -125,16 +44,17 @@ export default function App() {
             height: Platform.OS == 'android' ? 70 : 70,
             paddingBottom: Platform.OS == 'android' ? 15 : 20,
             paddingTop: Platform.OS == 'android' ? 8 : 6,
+            // backgroundColor: THEME_COLOR,-------------------------------------DARK MODE
           },
           labelStyle: {
             fontSize: Platform.OS == 'android' ? 12 : 10,
           },
         }}>
         <Tab.Screen
-          name="Reservation"
-          component={ReservationScreenStack}
+          name="Reserve"
+          component={ReserveScreenStack}
           options={{
-            tabBarLabel: 'Reservation',
+            tabBarLabel: 'Reserve',
             tabBarIcon: ({color, size}) => (
               <MaterialIcon name="calendar-clock" color={color} size={24} />
             ),
