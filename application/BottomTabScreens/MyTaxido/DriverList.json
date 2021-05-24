@@ -1,28 +1,32 @@
 [
- {
-   "name": "델몬트 오렌지 주스",
-   "location": "B1층 A-22 음료 코너",
-   "image": ""
- },
- {
-   "name": "제주 삼다수 물",
-   "location": "B1층 A-21 음료 코너",
-   "image": ""
- },
- {
-   "name": "카스 맥주",
-   "location": "B1층 B-24 주류 코너",
-   "image": ""
- },
- {
-   "name": "테팔 후라이팬",
-   "location": "1층 C-2 주방용품 코너",
-   "image": ""
- },
- {
-   "name": "디퓨저",
-   "location": "1층 C-5 생활용품 코너",
-   "image": ""
- }
- 
+  {
+    "name": "JinSeo Han",
+    "car": "Hyundai Starex (Van)",
+    "avatar_url": "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png",
+    "review": "No sudden stops, Pregnant Women Taxi"
+  },
+  {
+    "name": "Kwangmin Kim",
+    "car": "Lamborghini (Sports Car)",
+    "avatar_url": "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg",
+    "review": "Speed Rider, Quick Access"
+  },
+  {
+    "name": "Nahyun An",
+    "car": "Hyundai Sonata (Sedan)",
+    "avatar_url": "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg",
+    "review": "Gentleness, Friendly, Pet Available"
+  },
+  {
+    "name": "Daekyung Kim",
+    "car": "Hyundai Grandeur (Sedan)",
+    "avatar_url": "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg",
+    "review": "Silence, Kindness, Safe Driver"
+  },
+  {
+    "name": "Youngho Kim",
+    "car": "KIA Carnival (Van)",
+    "avatar_url": "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg",
+    "review": "Wheelchair Available, Van"
+  },
 ]

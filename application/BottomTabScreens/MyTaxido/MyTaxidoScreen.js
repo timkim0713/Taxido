@@ -1,27 +1,27 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-import { StyleSheet, ScrollView, Alert, RefreshControl, ActivityIndicator, Image } from 'react-native';
+import { StyleSheet, ScrollView, Alert, RefreshControl, ActivityIndicator, Image, View } from 'react-native';
+import { ListItem, Avatar, Badge, Chevron } from 'react-native-elements'
+// import {
+//   Button,
+//   View,
+//   Container,
+//   Text,
+//   Item,
+//   Header,
+//   Title,
+//   Content,
+//   Input,
+//   Left,
+//   Right,
+//   Body,
+//   Icon,
+//   ListItem,
+//   Thumbnail,
+// } from 'native-base';
 
-import {
-  Button,
-  View,
-  Container,
-  Text,
-  Item,
-  Header,
-  Title,
-  Content,
-  Input,
-  Left,
-  Right,
-  Body,
-  Icon,
-  ListItem,
-  Thumbnail,
-} from 'native-base';
-
-
+import DRIVER_LIST from './DriverList.json';
 import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FAIcon from 'react-native-vector-icons/FontAwesome';
@@ -30,43 +30,54 @@ import AntIcon from 'react-native-vector-icons/AntDesign';
 const ICON_COLOR = '#FFCD4A';
 const THEME_COLOR = '#242424';
 
+// Pregnant: MaterialCommunityIcons, human-pregnant
+// Pet: Foundation, guide-dog
+// WheelChair: FontAwesome5, FontAwesome, wheelchair
+// Blind: FontAwesome, blind
+// 
+
 export default function MyTaxidoScreen() {
   return (
-    <Container>
-      <Header searchBar rounded
-        androidStatusBarColor='white'
-        style={{ backgroundColor: 'transparent' }}
-      >
-        <Item style={Styles.searchBar}>
-          <Icon name='search' />
-          <Input
-            placeholder="상품을 검색 해보세요"
-            placeholderTextColor={THEME_COLOR}
-            selectionColor={ICON_COLOR}
-            onChangeText={text => searchItem(text)} />
-        </Item>
-      </Header>
-           
-            <View>
-              {itemsFiltered.map((item, index) => (
-                <ListItem key={index} style={{ flexDirection: 'column', alignItems: 'flex-start' }} onPress={() => { toggleModal(item); setPausePressable(true); }}>
-                  {item.label == 'New' ?
-                    <Text color="primary" size="xx-small" boldness="normal" >{item.label.toUpperCase()}</Text>
-                    : <></>}
-                  <Text color="dark" size="medium" boldness="normal" >{item.name}</Text>
-                  <Text color="grey" size="small" boldness="normal">재고: {item.inventoryCount}개</Text>
-                  <Text color="lightGrey" decoration='strike-through'>가격: {currencyFormat(item.parentPrice)}원</Text>
-                  <Text color='dark'>가격: {currencyFormat(item.price)}원</Text>
-                </ListItem>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+    >
+      <View>
+        {
+          DRIVER_LIST.map((l, i) => (
+            <ListItem key={i} bottomDivider>
+              <Avatar source={{ uri: l.avatar_url }} />
+              <ListItem.Content>
+                <ListItem.Title>{l.name}</ListItem.Title>
+                <View style={styles.subtitleView}>
+                  <ListItem.Subtitle>{l.review}</ListItem.Subtitle>
+                </View>
+              </ListItem.Content>
+              <ListItem.Chevron />
+            </ListItem>
+          ))
+        }
+      </View>
+    </ScrollView>
 
-              ))}
-            </View>
-    </Container >
-    
+
   );
 }
-
-
+styles = StyleSheet.create({
+  subtitleView: {
+    flexDirection: 'row',
+    paddingLeft: 10,
+    paddingTop: 5
+  },
+  ratingImage: {
+    height: 19.21,
+    width: 100
+  },
+  ratingText: {
+    paddingLeft: 10,
+    color: 'grey'
+  }
+})
 
 
 
